@@ -182,7 +182,13 @@
     tree-kill "^1.0.0"
     webpack-sources "^1.1.0"
 
-"@ngxs/store@^3.0.1":
+"@ngxs/devtools-plugin@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@ngxs/devtools-plugin/-/devtools-plugin-3.0.1.tgz#a0c925777466dd38bd5873dfae50c43c09b2e319"
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/store@3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.0.1.tgz#57209cce8ddf93bbcffc6dc599690291337a65be"
   dependencies:
