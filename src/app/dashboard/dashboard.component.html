@@ -1,0 +1,20 @@
+<div class="name-wrapper" *ngIf="!((app$ | async).name)">
+  <mat-form-field class="name-form">
+    <input matInput placeholder="What will be the name of your sticker book?" [formControl]="name" (keydown.enter)="setName()" required>
+    <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="setName()">GO!</button>
+</div>
+<div class="sticker-wrapper" *ngIf="!!((app$ | async).name)">
+  <mat-card *ngFor="let sticker of (stickers$ | async)" class="sticker">
+    <mat-card-header>
+      <mat-card-title>{{sticker.name}}</mat-card-title>
+    </mat-card-header>
+    <div class="sticker-image">
+      <img src="../../../assets/stickers/{{sticker.fileName}}" />
+    </div>
+    <mat-card-actions class="sticker-buttons">
+      <button mat-raised-button color="primary" (click)="addSticker(sticker)"><mat-icon>add_cirle</mat-icon> ADD</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

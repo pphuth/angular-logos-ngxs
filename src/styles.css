@@ -1,1 +1,75 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+}
+
+.fill-remaining-space {
+  /*This fills the remaining space, by using flexbox.
+ Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.sticker-wrapper {
+  display: grid;
+  grid-template-columns: repeat(8, 12.5%);
+  grid-auto-flow: row;
+}
+
+@media (min-width: 0px) and (max-width: 599px) {
+  .sticker-wrapper {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .sticker-wrapper {
+    grid-template-columns: repeat(3, 33.33%);
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  .sticker-wrapper {
+    grid-template-columns: repeat(5, 20%);
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1979px) {
+  .sticker-wrapper {
+    grid-template-columns: repeat(6, 16.66%);
+  }
+}
+
+.mat-card.sticker {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sticker-image {
+  width: 100%;
+  padding: 8%;
+}
+
+.sticker-image img {
+  max-width: 100%;
+}
+
+.mat-card>.mat-card-actions:last-child.sticker-buttons {
+  margin: 0;
+  text-align: center;
+}
+
+.name-wrapper {
+  margin: 16px;
+  text-align: center;
+}
+
+.name-form {
+  width: 60%;
+  margin-right: 24px;
+}
+
+.mat-toolbar button {
+  margin-right: 16px;
+}

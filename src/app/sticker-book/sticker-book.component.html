@@ -1,0 +1,14 @@
+<mat-toolbar style="justify-content: center">{{(app$ | async).name}}</mat-toolbar>
+<div class="sticker-wrapper">
+  <mat-card *ngFor="let sticker of (stickerBook$ | async).collection" class="sticker">
+    <mat-card-header>
+      <mat-card-title>{{sticker.name}}</mat-card-title>
+    </mat-card-header>
+    <div class="sticker-image">
+      <img src="../../../assets/stickers/{{sticker.fileName}}" />
+    </div>
+    <mat-card-actions class="sticker-buttons">
+      <button mat-raised-button color="accent" (click)="removeSticker(sticker.id)"><mat-icon>delete</mat-icon> REMOVE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

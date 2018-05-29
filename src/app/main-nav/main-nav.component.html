@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <button mat-raised-button color="accent" routerLink="/"><mat-icon>home</mat-icon></button>
+  <button mat-raised-button color="accent" routerLink="/" (click)="restart()">START OVER</button>
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span>
+  <div>
+    <button mat-button routerLink="/sticker-book"><mat-icon>import_contacts</mat-icon><span [matBadge]="(app$ | async).count" matBadgeOverlap="false" matBadgeColor="accent"> Your Sticker Book</span></button>
+  </div>
+</mat-toolbar>
