@@ -8,34 +8,14 @@ body {
   flex: 1 1 auto;
 }
 
+.wrapper {
+  padding-top: 74px;
+}
+
 .sticker-wrapper {
   display: grid;
   grid-template-columns: repeat(8, 12.5%);
   grid-auto-flow: row;
-}
-
-@media (min-width: 0px) and (max-width: 599px) {
-  .sticker-wrapper {
-    grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@media (min-width: 600px) and (max-width: 959px) {
-  .sticker-wrapper {
-    grid-template-columns: repeat(3, 33.33%);
-  }
-}
-
-@media (min-width: 960px) and (max-width: 1279px) {
-  .sticker-wrapper {
-    grid-template-columns: repeat(5, 20%);
-  }
-}
-
-@media (min-width: 1280px) and (max-width: 1979px) {
-  .sticker-wrapper {
-    grid-template-columns: repeat(6, 16.66%);
-  }
 }
 
 .mat-card.sticker {
@@ -44,6 +24,7 @@ body {
   margin: 5%;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .sticker-image {
@@ -70,6 +51,61 @@ body {
   margin-right: 24px;
 }
 
+.mat-toolbar.mat-toolbar-single-row {
+  height: 74px;
+}
+
+.mat-toolbar {
+
+  position: fixed;
+  z-index: 10;
+}
+
 .mat-toolbar button {
   margin-right: 16px;
+}
+
+.mat-toolbar button.small-screen {
+  margin-right: 16px;
+  display: none;
+}
+
+@media (min-width: 0px) and (max-width: 599px) {
+  .sticker-wrapper {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .wrapper {
+    padding-top: 66px;
+  }
+
+  .mat-toolbar.mat-toolbar-single-row {
+    height: 66px;
+  }
+
+  .mat-toolbar button {
+    display: none;
+  }
+
+  .mat-toolbar button.small-screen {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .sticker-wrapper {
+    grid-template-columns: repeat(3, 33.33%);
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+  .sticker-wrapper {
+    grid-template-columns: repeat(5, 20%);
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1979px) {
+  .sticker-wrapper {
+    grid-template-columns: repeat(6, 16.66%);
+  }
 }

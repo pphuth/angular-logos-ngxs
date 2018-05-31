@@ -1,9 +1,12 @@
 <mat-toolbar color="primary">
-  <button mat-raised-button color="accent" routerLink="/"><mat-icon>home</mat-icon></button>
-  <button mat-raised-button color="accent" routerLink="/" (click)="restart()">START OVER</button>
+  <button mat-raised-button color="accent" routerLink="/"><mat-icon>home</mat-icon> HOME</button>
+  <button mat-raised-button color="accent" routerLink="/" (click)="restart()"><mat-icon>refresh</mat-icon> START OVER</button>
+  <button class="small-screen" mat-mini-fab color="accent" routerLink="/"><mat-icon>home</mat-icon></button>
+  <button class="small-screen" mat-mini-fab color="accent" routerLink="/" (click)="restart()"><mat-icon>refresh</mat-icon></button>
   <!-- This fills the remaining space of the current row -->
   <span class="fill-remaining-space"></span>
   <div>
-    <button mat-button routerLink="/sticker-book"><mat-icon>import_contacts</mat-icon><span [matBadge]="(app$ | async).count" matBadgeOverlap="false" matBadgeColor="accent"> Your Sticker Book</span></button>
+    <button mat-raised-button routerLink="/sticker-book" [matBadge]="(app$ | async).count" matBadgeColor="accent" matBadgePosition="before"><mat-icon>import_contacts</mat-icon> Your Sticker Book</button>
+    <button class="small-screen" mat-mini-fab routerLink="/sticker-book" [matBadge]="(app$ | async).count" matBadgeColor="accent" matBadgePosition="before" color="white"><mat-icon>import_contacts</mat-icon></button>
   </div>
 </mat-toolbar>
